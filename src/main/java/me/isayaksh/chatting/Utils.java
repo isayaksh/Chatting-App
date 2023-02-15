@@ -1,7 +1,7 @@
 package me.isayaksh.chatting;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import me.isayaksh.chatting.entity.Message;
+import me.isayaksh.chatting.entity.ChatMessage;
 
 public class Utils {
     private static final ObjectMapper objectMapper = new ObjectMapper();
@@ -9,11 +9,11 @@ public class Utils {
     private Utils() {
     }
 
-    public static Message getObject(final String message) throws Exception {
-        return objectMapper.readValue(message, Message.class);
+    public static ChatMessage getObject(final String message) throws Exception {
+        return objectMapper.readValue(message, ChatMessage.class);
     }
 
-    public static String getString(final Message message) throws Exception {
-        return objectMapper.writeValueAsString(message);
+    public static String getString(final ChatMessage chatMessage) throws Exception {
+        return objectMapper.writeValueAsString(chatMessage);
     }
 }
